@@ -25,6 +25,8 @@ type (
 		ClientKey string
 		// Host is the host where the Forensiq API is available at.
 		Host string
+
+		httpClient *http.Client
 	}
 
 	// CheckRequest represents a request to the Forensiq API
@@ -99,6 +101,22 @@ var (
 	ErrInvalidClientKey = errors.New("the client key was not accepted by forensiq")
 )
 
+// New returns a new Forensiq initialized with given host and clientKey and use
+// http.DefaultClient as the HTTP client.
+func New(host, clientKey string) *Forensiq {
+	return &Forensiq{
+		Host:       host,
+		ClientKey:  clientKey,
+		httpClient: http.DefaultClient,
+	}
+}
+
+// SetHTTPClient sets a custom HTTP Client to use when sending requests to
+// forensiq. By default http.DefaultClient is used.
+func (f *Forensiq) SetHTTPClient(hc *http.Client) {
+	f.httpClient = hc
+}
+
 // Check get the riskScore and aggregate characteristics.
 func (f *Forensiq) Check(ctx context.Context, creq CheckRequest) (CheckResponse, error) {
 	var (
@@ -130,7 +148,7 @@ func (f *Forensiq) Check(ctx context.Context, creq CheckRequest) (CheckResponse,
 
 	{
 		begin := time.Now()
-		resp, err := ctxhttp.Do(ctx, nil, req)
+		resp, err := ctxhttp.Do(ctx, f.httpClient, req)
 		if err != nil {
 			return CheckResponse{}, err
 		}
@@ -171,7 +189,7 @@ func (f *Forensiq) Ready(ctx context.Context) (bool, error) {
 
 	{
 		begin := time.Now()
-		resp, err := ctxhttp.Get(ctx, http.DefaultClient, uri.String())
+		resp, err := ctxhttp.Get(ctx, f.httpClient, uri.String())
 		if err != nil {
 			return false, err
 		}
