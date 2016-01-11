@@ -1,13 +1,13 @@
 # Forensiq
 
-[![godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/kalbasit/forensiq) [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/kalbasit/forensiq/master/LICENSE) [![Build Status](https://travis-ci.org/kalbasit/forensiq.svg?branch=master)](https://travis-ci.org/kalbasit/forensiq) [![Coverage](http://gocover.io/_badge/github.com/kalbasit/forensiq)](http://gocover.io/github.com/kalbasit/forensiq)
+[![godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/dailymotion/forensiq) [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/dailymotion/forensiq/master/LICENSE) [![Build Status](https://travis-ci.org/dailymotion/forensiq.svg?branch=master)](https://travis-ci.org/dailymotion/forensiq) [![Coverage](http://gocover.io/_badge/github.com/dailymotion/forensiq)](http://gocover.io/github.com/dailymotion/forensiq)
 
 Forensiq is a Go library interfacing [Forensiq](http://forensiq.com/)
 API.
 
 ## Installing
 
-    go get -u github.com/kalbasit/forensiq
+    go get -u github.com/dailymotion/forensiq
 
 ## Usage
 
@@ -20,7 +20,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/kalbasit/forensiq"
+	"github.com/dailymotion/forensiq"
 	"github.com/rs/xlog"
 	"golang.org/x/net/context"
 )
@@ -67,4 +67,4 @@ forensiq.CheckResponse{RiskScore:0, SellerDomain:0, DomainViewed:0, DomainHidden
 
 ## Licenses
 
-All source code is licensed under the [MIT License](https://raw.github.com/kalbasit/forensiq/master/LICENSE).
+All source code is licensed under the [MIT License](https://raw.github.com/dailymotion/forensiq/master/LICENSE).
