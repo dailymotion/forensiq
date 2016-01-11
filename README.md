@@ -31,10 +31,7 @@ func main() {
 	ctx = xlog.NewContext(ctx, xlog.New(xlog.Config{Output: xlog.NewConsoleOutput()}))
 
 	// create a new forensiq object.
-	fq := &forensiq.Forensiq{
-		ClientKey: "xxx", # Provide your own key here.
-		Host:      "http://api.forensiq.com",
-	}
+	fq := &forensiq.New("http://api.forensiq.com", "xxx") # Replace xxx with your client key.
 
 	// create a Forensiq Request.
 	fqreq := forensiq.CheckRequest{
