@@ -211,7 +211,9 @@ func (f *Forensiq) Ready(ctx context.Context) (bool, error) {
 
 func (cr CheckRequest) toValues() url.Values {
 	v := url.Values{}
-	v.Set("ip", cr.IP.String())
+	if cr.IP != nil {
+		v.Set("ip", cr.IP.String())
+	}
 	v.Set("rt", cr.RequestType)
 	v.Set("url", cr.URL)
 	v.Set("seller", cr.SellerID)
