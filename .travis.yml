@@ -1,7 +1,11 @@
 language: go
 go:
-  - 1.5
+  - 1.6
   - tip
 matrix:
   allow_failures:
     - go: tip
+notifications:
+  slack:
+    # dailymotion channels #squad-ads
+    secure: U9JirVogYK3KCFhgxU1adv8eeb6ryK9FvVvpvGyZLjsJw24BS3QB4ocqEo8yaOnsqNGW2k30JvVjaqTfUvTGjafgwui5JZ5UH+VYXZ44PMRw/Pile+H3fcf72JJbNSnr1ZTy8Tme+JGNjx7U1ILe+BmlaOYgrsfXqqJPp/4PPX9I0KPHQ25SBAOxWxiEGim6lkkLdygXXhzXbMIS5NKhWgS5eQC1vmyc9wM1VDkLJDHtc7PI818xUmaU+q/h4zz/hMozhMZP8pckFu26gd68hCI7RVb5kWLBRE0uPZ9f0W1hdHZmD+3DjPDDDsE4aApFAzeQwJ9wGQOGvR0EmsmDTGM5xciY7JuQg9gT37ZUpJ2aOsKkvzoIHe1314wKmVNfNj1GQFUPwen8RldbjBJqMbJedW3FM/eLENXbM4/Rb82uiPKz0+x4ekWm2cb3/8HL+Ays8xdDSVLRMqmIOgC5ysy0oScezNz50ADJzKUSwZ7xggWa2tiSMXHR8XsH9yoWSksU10CvhesJe9cbXHFBqPPOLDwVSX44Dk1mDbwV4LcFEFwSWb4G1/I8yqI0eci1sG0YXQ1Getx61rYR5DlsKE5a3Q2sTund/xnN/qExInti9oqRO/t3VuIt9ko8MSTXUn8odQvL3lSaNR3ijNhfCZIfY/gArOLjwiY2VGk2J3w=
